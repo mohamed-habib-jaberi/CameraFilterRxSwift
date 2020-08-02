@@ -9,10 +9,17 @@
 import Foundation
 import UIKit
 import Photos
+import RxSwift
 
 class PhotosCollectionViewController: UICollectionViewController {
     
     private var images = [PHAsset]()
+    
+    private let selectedPhotoSubject = PublishSubject<UIImage>()
+    var selectedPhoto: Observable<UIImage> {
+        return selectedPhotoSubject.asObservable()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +53,25 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedAsset = self.images[indexPath.row]
+        PHImageManager.default().requestImage(for: selectedAsset, targetSize: CGSize(width: 300, height: 300), contentMode: .aspectFit, options: nil) { [weak self] (image, info ) in
+            
+            guard let info = info else { return }
+            
+            let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
+            
+            if !isDegradedImage {
+                
+                if let image = image {
+                    self?.selectedPhotoSubject.onNext(image)
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            }
+            
+        }
+    }
     private func populatePhotos(){
         
         PHPhotoLibrary.requestAuthorization { [weak self] status in
