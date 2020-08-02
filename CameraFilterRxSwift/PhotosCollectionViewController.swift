@@ -12,6 +12,8 @@ import Photos
 
 class PhotosCollectionViewController: UICollectionViewController {
     
+    private var images = [PHAsset]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,12 +23,20 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private func populatePhotos(){
         
-        PHPhotoLibrary.requestAuthorization { status in
+        PHPhotoLibrary.requestAuthorization { [weak self] status in
             
             if status == .authorized {
                 
                 //access the photos from photo library
-                
+                let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
+                assets.enumerateObjects { (object, count, stop) in
+                    
+                    self?.images.append(object)
+                    
+                }
+                self?.images.reverse()
+                print(self?.images)
+                //self?.collectionView.reloadData()
             }
         }
     }
