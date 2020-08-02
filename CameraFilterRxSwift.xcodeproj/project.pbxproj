@@ -16,6 +16,7 @@
 		6147FFC724D714E900C58F7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6147FFC524D714E900C58F7A /* LaunchScreen.storyboard */; };
 		6147FFCF24D7164E00C58F7A /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147FFCE24D7164E00C58F7A /* PhotosCollectionViewController.swift */; };
 		6147FFD124D7335400C58F7A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147FFD024D7335400C58F7A /* PhotoCollectionViewCell.swift */; };
+		6147FFD324D75B8B00C58F7A /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147FFD224D75B8B00C58F7A /* FilterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		6147FFC824D714E900C58F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6147FFCE24D7164E00C58F7A /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		6147FFD024D7335400C58F7A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		6147FFD224D75B8B00C58F7A /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		BA10E242B3E7FADBF2EFB9A3 /* Pods-CameraFilterRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraFilterRxSwift.release.xcconfig"; path = "Target Support Files/Pods-CameraFilterRxSwift/Pods-CameraFilterRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				6147FFBE24D714E200C58F7A /* ViewController.swift */,
 				6147FFCE24D7164E00C58F7A /* PhotosCollectionViewController.swift */,
 				6147FFD024D7335400C58F7A /* PhotoCollectionViewCell.swift */,
+				6147FFD224D75B8B00C58F7A /* FilterService.swift */,
 				6147FFC024D714E200C58F7A /* Main.storyboard */,
 				6147FFC324D714E900C58F7A /* Assets.xcassets */,
 				6147FFC524D714E900C58F7A /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 				6147FFBF24D714E200C58F7A /* ViewController.swift in Sources */,
 				6147FFD124D7335400C58F7A /* PhotoCollectionViewCell.swift in Sources */,
 				6147FFBB24D714E200C58F7A /* AppDelegate.swift in Sources */,
+				6147FFD324D75B8B00C58F7A /* FilterService.swift in Sources */,
 				6147FFBD24D714E200C58F7A /* SceneDelegate.swift in Sources */,
 				6147FFCF24D7164E00C58F7A /* PhotosCollectionViewController.swift in Sources */,
 			);
